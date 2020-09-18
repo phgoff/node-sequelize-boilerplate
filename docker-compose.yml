@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  api:
+    container_name: api-service
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app/
+      - ./node_modules:/usr/src/app/node_modules
+    links:
+      - db
+    depends_on:
+      - db
+    restart: always
+    environment:
+      DB_HOST: db-service
+      DB_DATABASE: dbName
+      DB_USERNAME: dbUsername
+      DB_PASSWORD: dbPassword
+    command: "yarn dev" #PRD "yarn restart"
+    networks:
+      - network-bridge
+  db:
+    image: mariadb
+    container_name: db-service
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: MYSQLPASSWORD
+      MYSQL_PASSWORD: MYSQLPASSWORD
+      MYSQL_DATABASE: DATABASENAME
+    restart: always
+    networks:
+      - network-bridge
+
+networks:
+  network-bridge:
+    driver: bridge
