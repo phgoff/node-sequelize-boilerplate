@@ -1,8 +1,17 @@
-export const findOne = () => ({ id: 1, name: 'user1' });
+import models from '../../models';
 
-export const findAll = () => (
-  [
-    { id: 1, name: 'user1' },
-    { id: 2, name: 'user2' },
-  ]
-);
+const { User, Post } = models;
+export const findOne = async (id) => {
+  const user = await User.findOne({
+    where: {
+      id,
+    },
+    include: [Post],
+  });
+  return user;
+};
+
+export const findAll = async () => {
+  const users = await User.findAll();
+  return users;
+};

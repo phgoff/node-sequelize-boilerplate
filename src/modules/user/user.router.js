@@ -3,8 +3,8 @@ import { getAll, getOne } from './user.controller';
 
 const router = Router();
 
-router.get('/', getOne);
-
 router.get('/all', getAll);
+
+router.get('/:id', getOne);
 
 export default router;

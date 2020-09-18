@@ -1,5 +1,13 @@
 # NODEJS SEQUELIZE BOILERPLATE
 
+## Branches
+
+- master - default branch without sequelize
+- sequelize - configuration
+  -- database
+  -- models
+  -- migrations
+
 ## Running Locally
 
 ### Installing Node.js modules
@@ -14,8 +22,6 @@
 
 ### Production
 
+    yarn build
+
     yarn start
-
-## Environment
-
-- PORT
