@@ -3,10 +3,10 @@
 ## Branches
 
 - master - default branch without sequelize
-- sequelize - configuration
-  -- database
-  -- models
-  -- migrations
+- sequelize
+  - database
+  - models
+  - migrations
 
 ## Running Locally
 
@@ -20,8 +20,16 @@
 
     yarn dev
 
+OR
+
+    docker-compose -f docker-compose.dev.yml up [-d]
+
 ### Production
 
     yarn build
 
     yarn start
+
+OR
+
+    docker-compose up [-d]
