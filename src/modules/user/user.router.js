@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import { getAll, getOne } from './user.controller';
+import { getAll, getError, getErrorTryCatch } from './user.controller';
 
 const router = Router();
 
-router.get('/', getOne);
+router.get('/', getAll);
 
-router.get('/all', getAll);
+router.get('/error', getError);
+
+router.get('/error-trycatch', getErrorTryCatch);
 
 export default router;

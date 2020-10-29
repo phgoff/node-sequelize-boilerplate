@@ -1,8 +1,9 @@
-export default function handleResponse(res, error, statusCode, data, message) {
-  res.status(statusCode).send({
-    statusCode,
+export default function handleResponse(res, code, result, message, data, option = {}) {
+  res.status(code === 204 ? 200 : code).send({
+    code,
+    result,
     message,
-    error,
     data,
+    ...option,
   });
 }

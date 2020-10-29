@@ -1,8 +1,14 @@
-# NODEJS SEQUELIZE BOILERPLATE
+# NODEJS BABEL BOILERPLATE
+
+## BRANCHES
+
+    - master[default] - only nodejs
+    - docker
+    - sequelize
 
 ## Running Locally
 
-### Installing Node.js modules
+### Installing nodemodules
 
     yarn install
 
@@ -14,8 +20,5 @@
 
 ### Production
 
+    yarn build
     yarn start
-
-## Environment
-
-- PORT

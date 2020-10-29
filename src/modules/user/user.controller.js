@@ -1,23 +1,30 @@
 import handleResponse from '../../utils/handler';
 
-const { findOne, findAll } = require('./user.service');
-
-export const getOne = (req, res) => {
-  try {
-    const user = findOne();
-    handleResponse(res, false, 200, user, 'Get A User');
-  } catch (error) {
-    console.error(error);
-    handleResponse(res, true, 500, null, 'Something went wrong!');
-  }
-};
+const { findAll, showError, showErrorTryCatch } = require('./user.service');
 
 export const getAll = (req, res) => {
   try {
     const users = findAll();
-    handleResponse(res, false, 200, users, 'Get All Users');
+    handleResponse(res, 200, 'Success', 'Get All', users);
   } catch (error) {
-    console.error(error);
-    handleResponse(res, true, 500, null, 'Something went wrong!');
+    handleResponse(res, error.code, 'Fail', error.message, null);
+  }
+};
+
+export const getError = (req, res) => {
+  try {
+    const users = showError();
+    handleResponse(res, 200, 'Success', 'Get All', users);
+  } catch (error) {
+    handleResponse(res, error.code, 'Fail', error.message, null);
+  }
+};
+
+export const getErrorTryCatch = (req, res) => {
+  try {
+    const users = showErrorTryCatch();
+    handleResponse(res, 200, 'Success', 'Get All', users);
+  } catch (error) {
+    handleResponse(res, error.code, 'Fail', error.message, null);
   }
 };
