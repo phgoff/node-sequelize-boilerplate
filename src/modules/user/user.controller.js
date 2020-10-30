@@ -1,4 +1,4 @@
-import handleResponse from '../../utils/handler';
+import handleResponse from '../../utils/handleResponse';
 
 const { findAll, showError, showErrorTryCatch } = require('./user.service');
 
