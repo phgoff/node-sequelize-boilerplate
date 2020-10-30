@@ -1,15 +1,14 @@
 {
-  "name": "node-sequelize-boilerplate",
-  "version": "1.0.0",
+  "name": "nodejs-babel-boilerplate",
+  "version": "2.0.0",
   "main": "index.js",
-  "author": "Phirathat Jittieng",
+  "author": "",
   "license": "MIT",
   "scripts": {
-    "build": "yarn clean && babel src --out-dir dist",
-    "clean": "rimraf dist",
-    "dev": "nodemon --exec yarn restart",
-    "restart": "yarn build && yarn start",
-    "start": "node dist/index.js",
+    "build": "rimraf dist && babel src --out-dir dist",
+    "dev": "babel-watch src/index.js",
+    "restart": " yarn build && yarn start",
+    "start": "node dist/index.js"
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo:all"
   },
@@ -29,11 +28,13 @@
     "@babel/preset-env": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-watch": "^7.0.0",
     "eslint": "^7.7.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.0",
-    "nodemon": "^2.0.4",
-    "rimraf": "^3.0.2",
-    "sequelize-cli": "^6.2.0"
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2",
+    "rimraf": "^3.0.2"
   }
 }

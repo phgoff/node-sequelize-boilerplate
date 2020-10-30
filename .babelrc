@@ -9,5 +9,16 @@
       }
     ]
   ],
-  "plugins": []
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "@": "./",
+          "@src": "./src"
+        }
+      }
+    ]
+  ]
 }

@@ -1,16 +1,14 @@
-# NODEJS SEQUELIZE BOILERPLATE
+# NODEJS BABEL BOILERPLATE
 
-## Branches
+## BRANCHES
 
-- master - default branch without sequelize
-- sequelize - configuration
-  -- database
-  -- models
-  -- migrations
+    - master[default] - only nodejs
+    - docker
+    - sequelize
 
 ## Running Locally
 
-### Installing Node.js modules
+### Installing nodemodules
 
     yarn install
 
@@ -23,5 +21,4 @@
 ### Production
 
     yarn build
-
     yarn start
