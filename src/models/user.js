@@ -1,11 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
-    name: {
-      type: DataTypes.STRING,
+  const User = sequelize.define(
+    'User',
+    {
+      name: {
+        type: DataTypes.STRING,
+      },
     },
-  }, {
-    tableName: 'user',
-  });
+    {
+      tableName: 'user',
+    },
+  );
   User.associate = function associate(models) {
     User.hasMany(models.Post, {
       foreignKey: 'userID',

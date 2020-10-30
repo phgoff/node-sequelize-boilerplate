@@ -1,4 +1,3 @@
-/* eslint-disable no-use-before-define */
 import http from 'http';
 import app from './app';
 

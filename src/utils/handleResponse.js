@@ -1,15 +1,9 @@
-export function handleSuccess(res, statusCode, data, message) {
-  return res.status(statusCode).send({
-    statusCode,
+export default function handleResponse(res, code, result, message, data, option = {}) {
+  res.status(code === 204 ? 200 : code).send({
+    code,
+    result,
     message,
     data,
-  });
-}
-
-export function handleError(res, statusCode, message) {
-  return res.status(statusCode).send({
-    statusCode,
-    error: true,
-    message,
+    ...option,
   });
 }
