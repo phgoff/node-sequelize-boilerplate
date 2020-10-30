@@ -1861,11 +1861,6 @@ eslint-config-prettier@^6.15.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-standard@^16.0.0:
-  version "16.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-standard/-/eslint-config-standard-16.0.0.tgz#5f21e9b8be8be28c096e592e1137769d33c5cd92"
-  integrity sha512-kMCehB9yXIG+LNsu9uXfm06o6Pt63TFAOzn9tUOzw4r/hFIxHhNR1Xomxy+B5zMrXhqyfHVEcmanzttEjGei9w==
-
 eslint-import-resolver-node@^0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/eslint-import-resolver-node/-/eslint-import-resolver-node-0.3.4.tgz#85ffa81942c25012d8231096ddf679c03042c717"
