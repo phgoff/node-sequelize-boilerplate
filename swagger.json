@@ -1,0 +1,91 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Nodejs Swagger Example",
+    "version": "1.0.0",
+    "title": "Node API",
+    "contact": {
+      "email": ""
+    },
+    "license": {
+      "name": "",
+      "url": ""
+    }
+  },
+  "schemes": ["http"],
+  "host": "localhost:5000",
+  "basePath": "/",
+  "paths": {
+    "/user": {
+      "get": {
+        "summary": "Get users",
+        "description": "",
+        "produces": ["application/json"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Get users!",
+            "schema": {
+              "type": "array", 
+              "items": {
+                "$ref": "#/definitions/userResponse"
+              }
+            }
+          },
+          "500": {
+            "description": "Something went wrong!",
+            "schema": {
+              "$ref": "#/definitions/SomethingWentWrong"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "userResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "result": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "SomethingWentWrong": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "result": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
