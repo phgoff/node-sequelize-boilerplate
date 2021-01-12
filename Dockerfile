@@ -6,6 +6,9 @@ COPY package.json yarn.lock ./
 
 RUN yarn install
 
+# Production
+#RUN yarn install --frozen-lockfile --no-cache --production
+
 COPY . .
 
 EXPOSE 3000
