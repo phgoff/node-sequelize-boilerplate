@@ -2,11 +2,11 @@
 
 ## BRANCHES
 
-    - master[default] - only nodejs
+    - main
+    - master - only nodejs
     - docker
     - sequelize
-
-## Running Locally
+    - sequelize_docker
 
 ### Installing nodemodules
 
@@ -22,3 +22,7 @@
 
     yarn build
     yarn start
+
+## Generate Public/Private Keys
+
+    node src/utils/generateKey.js

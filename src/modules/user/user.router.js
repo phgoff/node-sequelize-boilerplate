@@ -1,12 +1,15 @@
 import { Router } from 'express';
-import { getAll, getError, getErrorTryCatch } from './user.controller';
+import { getAll, login } from './user.controller';
+import isAuthenticated from '@src/utils/middleware';
 
 const router = Router();
 
 router.get('/', getAll);
 
-router.get('/error', getError);
+/* header; Authorization: token */
+router.get('/with-token', isAuthenticated, getAll);
 
-router.get('/error-trycatch', getErrorTryCatch);
+/* generate token */
+router.post('/login', login);
 
 export default router;
